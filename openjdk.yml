@@ -5,12 +5,12 @@
 
     - name: Install openjdk
       apt:
-        name: openjdk-8-jre
+        name: "{{myubuntujavapackage}}"
         state: present
       when: ansible_os_family == "Debian"
 
     - name: i want to install open jdk 8 on redhat server
       yum:
-        name: java-1.8.0-openjdk
+        name: "{{myredhatpackage}}"
         state: present
       when: ansible_os_family == "RedHat"
