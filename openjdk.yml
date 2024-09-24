@@ -1,15 +1,18 @@
 ---
 - hosts: javaserver
   become: yes
-  tasks:
+  vars:
+    myubuntujavapackage: openjdk-8-jdk  
+    myredhatpackage: java-1.8.0-openjdk
 
-    - name: Install openjdk
+  tasks:
+    - name: Install openjdk on Debian
       apt:
         name: "{{myubuntujavapackage}}"
         state: present
       when: ansible_os_family == "Debian"
 
-    - name: i want to install open jdk 8 on redhat server
+    - name: Install open jdk 8 on redhat server
       yum:
         name: "{{myredhatpackage}}"
         state: present
