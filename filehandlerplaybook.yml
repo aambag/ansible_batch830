@@ -4,11 +4,11 @@
   tasks:
     - name: Update apt cache
       apt:
-        update_cache: yes
+        update_cache: yes  # Corrected indentation
 
-    - include_tasks: createfileplaybook.yml
+    - include_tasks: createfileplaybook.yml  # Ensure this is at the correct indentation level
 
     - name: Install apache2 on node server
       apt:
         name: apache2
-        state: present
+        state: present  # Corrected indentation
