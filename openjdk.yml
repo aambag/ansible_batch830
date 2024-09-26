@@ -6,6 +6,10 @@
     myredhatpackage: "java-1.8.0-openjdk"
 
   tasks:
+    - name: Update apt catche
+      apt:
+        update_catche: yes
+
     - name: Install openjdk on Debian
       apt:
         name: "{{myubuntujavapackage}}"
