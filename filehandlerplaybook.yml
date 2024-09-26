@@ -2,9 +2,9 @@
 - hosts: all
   become: yes
   tasks:
-    - includde_tasks: createfileplaybook.yml
+    - include_tasks: createfileplaybook.yml
 
-    - name: i want to install apache2 on node server
+    - name: Install apache2 on node server
       apt:
-          name: apache2
-          state: present
+        name: apache2
+        state: present
