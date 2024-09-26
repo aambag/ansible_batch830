@@ -5,7 +5,7 @@
       myvars1: git
       myvars2: tree
       myvars3: apache2
-      tasks:
-        - name: Display variable
-          debug:
-            msg: "{{ myvars1}}"
+    tasks:
+      - name: Display variable1
+        debug:
+          msg: "{{ myvars1}}"
