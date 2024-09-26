@@ -1,13 +1,9 @@
 ---
 # createfileplaybook.yml
 
-- name: Ensure the directory exists
+- name: Create file
   file:
-    path: /home/ubuntu/nitin  # Change this to your desired directory
-    state: directory
-    mode: '0755'  # Optional: Set permissions
-
-- name: Create a file
-  file:
-    path: /home/ubuntu/nitin/file.txt  # Change this to your desired file path
+    path: /home/ubuntu/nitin/file1.txt  # Change this to your desired directory
     state: touch
+    
+
