@@ -1,8 +1,13 @@
 ---
 # createfileplaybook.yml
+
+- name: Ensure the directory exists
+  file:
+    path: /home/ubuntu  # Change this to your desired directory
+    state: directory
+    mode: '0755'  # Optional: Set permissions
+
 - name: Create a file
   file:
-    path: /path/to/your/file.txt
+    path: /home/ubuntu/file.txt  # Change this to your desired file path
     state: touch
-
-# Add more tasks as needed
