@@ -18,6 +18,6 @@
 
     - name: Install tree if the command failed
       apt:
-        name: tree
+        name: tree2
         state: present
       when: myResult.rc != ""
