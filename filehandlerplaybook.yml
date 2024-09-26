@@ -2,7 +2,10 @@
 - hosts: all
   become: yes
   tasks:
-  
+    - name: Update apt cache
+      apt:
+        update_cache: yes
+
     - include_tasks: createfileplaybook.yml
 
     - name: Install apache2 on node server
