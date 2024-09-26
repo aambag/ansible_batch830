@@ -6,9 +6,9 @@
     myredhatpackage: "java-1.8.0-openjdk"
 
   tasks:
-    - name: Update apt catche
+    - name: Update apt cache
       apt:
-        update_catche: yes
+        update_cache: yes
 
     - name: Install openjdk on Debian
       apt:
