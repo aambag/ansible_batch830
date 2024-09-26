@@ -8,4 +8,13 @@
     tasks:
       - name: Display variable1
         debug:
-          msg: "{{ myvars1}}"
+          msg: "{{ myvars3 }}"
+
+      - name: Install package
+        apt:
+          name: "{{ item }}"
+          state: present
+        loop:
+          - "{{ myvars1 }}"
+          - "{{ myvars2 }}"
+          - "{{ myvars3 }}"
