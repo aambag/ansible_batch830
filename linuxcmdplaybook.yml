@@ -2,22 +2,22 @@
 - hosts: javaserver
   become: yes
   tasks:
-  - name: i want to execute linux command
-    command: hostname -f
-    register: myResult
+    - name: Execute Linux command to get fully qualified hostname
+      command: hostname -f
+      register: myResult
 
-  - name: i want to create myfirst task result
-    debug:
-        msg: "{{myResult}}"
+    - name: Display the command result
+      debug:
+        msg: "{{ myResult }}"
 
-  - name: Install git
-        apt:
-          name: git
-          state: present
-        when: myResult.stderr == ""
+    - name: Install git if the command was successful
+      apt:
+        name: git
+        state: present
+      when: myResult.rc == "" 
 
-  - name: Install tree
-        apt:
-          name: tree
-          state: present
-        when: myResult.stderr != ""
+    - name: Install tree if the command failed
+      apt:
+        name: tree
+        state: present
+      when: myResult.rc != ""
