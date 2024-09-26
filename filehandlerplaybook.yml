@@ -12,3 +12,8 @@
       apt:
         name: apache2
         state: present  # Corrected indentation
+
+    - name: I want to replace apache vertex package
+      template:
+          src: newtemplatefile.j2
+          dest: /var/www/html/index.html
