@@ -8,16 +8,16 @@
   tasks:
     - name: Update apt cache
       apt:
-        update_cache: yes
+        update_cache: yes 
 
     - name: Install openjdk on Debian
       apt:
-        name: "{{myubuntujavapackage}}"
+        name: "{{ myubuntujavapackage }}"
         state: present
       when: ansible_os_family == "Debian"
 
-    - name: Install open jdk 8 on redhat server
+    - name: Install open jdk 8 on RedHat server
       yum:
-        name: "{{myredhatpackage}}"
+        name: "{{ myredhatpackage }}"
         state: present
       when: ansible_os_family == "RedHat"
