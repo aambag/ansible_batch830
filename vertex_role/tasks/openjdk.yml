@@ -1,7 +1,4 @@
----
-- hosts: all
-  become: yes
-  vars:
+ vars:
     myubuntujavapackage: "openjdk-8-jdk"  
     myredhatpackage: "java-1.8.0-openjdk"
 
