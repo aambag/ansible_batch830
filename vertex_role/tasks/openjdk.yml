@@ -1,8 +1,9 @@
+---
  vars:
     myubuntujavapackage: "openjdk-8-jdk"  
     myredhatpackage: "java-1.8.0-openjdk"
 
-  tasks:
+    
     - name: Install openjdk on Debian
       apt:
         name: "{{ myubuntujavapackage }}"
