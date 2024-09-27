@@ -12,8 +12,16 @@
       apt:
         name: apache2
         state: present  # Corrected indentation
+      notify: restartedservice
 
     - name: I want to replace apache vertex package
       template:
           src: newtemplatefile.j2
           dest: /var/www/html/index.html
+      notify: restartedservice
+
+  handlers:
+      - name: restartedservice
+        service:
+          name: apache2
+          state: restarted
